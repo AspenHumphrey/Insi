@@ -1,0 +1,286 @@
+{
+    "total_hits": 2904,
+    "max_score": 12.685231,
+    "hits": [
+        {
+            "_index": "f762ef22-e660-434f-9071-a10ea6691c27",
+            "_type": "item",
+            "_id": "513fceb575b8dbbc210014e2",
+            "_score": 12.685231,
+            "fields": {
+                "item_id": "513fceb575b8dbbc210014e2",
+                "item_name": "Carrots, cooked, boiled, drained, without salt - 1 carrot",
+                "brand_name": "USDA",
+                "nf_total_carbohydrate": 3.78,
+                "nf_serving_size_unit": "carrot",
+                "nf_serving_weight_grams": 46
+            }
+        },
+        {
+            "_index": "f762ef22-e660-434f-9071-a10ea6691c27",
+            "_type": "item",
+            "_id": "513fceb575b8dbbc210014e4",
+            "_score": 12.051384,
+            "fields": {
+                "item_id": "513fceb575b8dbbc210014e4",
+                "item_name": "Carrots, cooked, boiled, drained, without salt - 1 tbsp",
+                "brand_name": "USDA",
+                "nf_total_carbohydrate": 0.8,
+                "nf_serving_size_unit": "tbsp",
+                "nf_serving_weight_grams": 9.7
+            }
+        },
+        {
+            "_index": "f762ef22-e660-434f-9071-a10ea6691c27",
+            "_type": "item",
+            "_id": "513fceb575b8dbbc210014e3",
+            "_score": 12.032148,
+            "fields": {
+                "item_id": "513fceb575b8dbbc210014e3",
+                "item_name": "Carrots, cooked, boiled, drained, without salt - 0.5 cup slices",
+                "brand_name": "USDA",
+                "nf_total_carbohydrate": 6.41,
+                "nf_serving_size_unit": "cup slices",
+                "nf_serving_weight_grams": 78
+            }
+        },
+        {
+            "_index": "f762ef22-e660-434f-9071-a10ea6691c27",
+            "_type": "item",
+            "_id": "c64062285d6cf3319cef8442",
+            "_score": 4.2065687,
+            "fields": {
+                "item_id": "c64062285d6cf3319cef8442",
+                "item_name": "Carrot",
+                "brand_name": "The Flame Broiler",
+                "nf_total_carbohydrate": 2,
+                "nf_serving_size_unit": "oz",
+                "nf_serving_weight_grams": null
+            }
+        },
+        {
+            "_index": "f762ef22-e660-434f-9071-a10ea6691c27",
+            "_type": "item",
+            "_id": "529e7df9ea63d49335003093",
+            "_score": 4.1418104,
+            "fields": {
+                "item_id": "529e7df9ea63d49335003093",
+                "item_name": "Carrot",
+                "brand_name": "Wrapido",
+                "nf_total_carbohydrate": 2,
+                "nf_serving_size_unit": "oz",
+                "nf_serving_weight_grams": null
+            }
+        },
+        {
+            "_index": "f762ef22-e660-434f-9071-a10ea6691c27",
+            "_type": "item",
+            "_id": "546a09b72bc0b27b2a676b44",
+            "_score": 4.0254254,
+            "fields": {
+                "item_id": "546a09b72bc0b27b2a676b44",
+                "item_name": "Carrot",
+                "brand_name": "Gem Wraps",
+                "nf_total_carbohydrate": 3,
+                "nf_serving_size_unit": "sheet",
+                "nf_serving_weight_grams": 10
+            }
+        },
+        {
+            "_index": "f762ef22-e660-434f-9071-a10ea6691c27",
+            "_type": "item",
+            "_id": "551fae7fcc155e3c2f709edb",
+            "_score": 3.9672332,
+            "fields": {
+                "item_id": "551fae7fcc155e3c2f709edb",
+                "item_name": "Carrot",
+                "brand_name": "The Cheesecake Factory Grocery",
+                "nf_total_carbohydrate": 178,
+                "nf_serving_size_unit": "slice",
+                "nf_serving_weight_grams": 396
+            }
+        },
+        {
+            "_index": "f762ef22-e660-434f-9071-a10ea6691c27",
+            "_type": "item",
+            "_id": "54fb188677e7f07357d9292d",
+            "_score": 2.1253307,
+            "fields": {
+                "item_id": "54fb188677e7f07357d9292d",
+                "item_name": "Carrots",
+                "brand_name": "Carrot Crunchers",
+                "nf_total_carbohydrate": 7,
+                "nf_serving_size_unit": "oz",
+                "nf_serving_weight_grams": 71
+            }
+        },
+        {
+            "_index": "f762ef22-e660-434f-9071-a10ea6691c27",
+            "_type": "item",
+            "_id": "51c3d65397c3e6d8d3b53c2f",
+            "_score": 2.016448,
+            "fields": {
+                "item_id": "51c3d65397c3e6d8d3b53c2f",
+                "item_name": "Savory Carrot Chips, Natural Paprika Flavor",
+                "brand_name": "Carrot Snapz",
+                "nf_total_carbohydrate": 17,
+                "nf_serving_size_unit": "package",
+                "nf_serving_weight_grams": 2
+            }
+        },
+        {
+            "_index": "f762ef22-e660-434f-9071-a10ea6691c27",
+            "_type": "item",
+            "_id": "463d68866789a3e90bfddc60",
+            "_score": 1.7794404,
+            "fields": {
+                "item_id": "463d68866789a3e90bfddc60",
+                "item_name": "Carrots",
+                "brand_name": "Bareburger",
+                "nf_total_carbohydrate": 10,
+                "nf_serving_size_unit": "oz",
+                "nf_serving_weight_grams": 100
+            }
+        },
+        {
+            "_index": "f762ef22-e660-434f-9071-a10ea6691c27",
+            "_type": "item",
+            "_id": "51c367e397c3e69de4b05c2d",
+            "_score": 1.7794404,
+            "fields": {
+                "item_id": "51c367e397c3e69de4b05c2d",
+                "item_name": "Carrots",
+                "brand_name": "Safeway",
+                "nf_total_carbohydrate": 7,
+                "nf_serving_size_unit": "med carrot",
+                "nf_serving_weight_grams": 78
+            }
+        },
+        {
+            "_index": "f762ef22-e660-434f-9071-a10ea6691c27",
+            "_type": "item",
+            "_id": "51c3703e97c3e69de4b0a357",
+            "_score": 1.7794404,
+            "fields": {
+                "item_id": "51c3703e97c3e69de4b0a357",
+                "item_name": "Carrots",
+                "brand_name": "Grimmway",
+                "nf_total_carbohydrate": 7,
+                "nf_serving_size_unit": "g",
+                "nf_serving_weight_grams": 78
+            }
+        },
+        {
+            "_index": "f762ef22-e660-434f-9071-a10ea6691c27",
+            "_type": "item",
+            "_id": "51c360a697c3e69de4b024ed",
+            "_score": 1.7794404,
+            "fields": {
+                "item_id": "51c360a697c3e69de4b024ed",
+                "item_name": "Carrots",
+                "brand_name": "Gerber",
+                "nf_total_carbohydrate": null,
+                "nf_serving_size_unit": "jar",
+                "nf_serving_weight_grams": 113
+            }
+        },
+        {
+            "_index": "f762ef22-e660-434f-9071-a10ea6691c27",
+            "_type": "item",
+            "_id": "51c360d297c3e69de4b0262c",
+            "_score": 1.7794404,
+            "fields": {
+                "item_id": "51c360d297c3e69de4b0262c",
+                "item_name": "Carrots",
+                "brand_name": "Gerber",
+                "nf_total_carbohydrate": null,
+                "nf_serving_size_unit": "jar",
+                "nf_serving_weight_grams": 170
+            }
+        },
+        {
+            "_index": "f762ef22-e660-434f-9071-a10ea6691c27",
+            "_type": "item",
+            "_id": "51c360dc97c3e69de4b02662",
+            "_score": 1.7794404,
+            "fields": {
+                "item_id": "51c360dc97c3e69de4b02662",
+                "item_name": "Carrots",
+                "brand_name": "Gerber",
+                "nf_total_carbohydrate": 7,
+                "nf_serving_size_unit": "pack",
+                "nf_serving_weight_grams": 99
+            }
+        },
+        {
+            "_index": "f762ef22-e660-434f-9071-a10ea6691c27",
+            "_type": "item",
+            "_id": "54c6384d7e77f8531893ad81",
+            "_score": 1.7794404,
+            "fields": {
+                "item_id": "54c6384d7e77f8531893ad81",
+                "item_name": "Carrots",
+                "brand_name": "Sawler",
+                "nf_total_carbohydrate": 8,
+                "nf_serving_size_unit": "medium carrot",
+                "nf_serving_weight_grams": 78
+            }
+        },
+        {
+            "_index": "f762ef22-e660-434f-9071-a10ea6691c27",
+            "_type": "item",
+            "_id": "555d90e3b1e133a57cd56a67",
+            "_score": 1.7794404,
+            "fields": {
+                "item_id": "555d90e3b1e133a57cd56a67",
+                "item_name": "Carrots",
+                "brand_name": "Unknown",
+                "nf_total_carbohydrate": 7,
+                "nf_serving_size_unit": "cup",
+                "nf_serving_weight_grams": 85
+            }
+        },
+        {
+            "_index": "f762ef22-e660-434f-9071-a10ea6691c27",
+            "_type": "item",
+            "_id": "5542328626f1f4315f803361",
+            "_score": 1.7794404,
+            "fields": {
+                "item_id": "5542328626f1f4315f803361",
+                "item_name": "Carrots",
+                "brand_name": "Markon",
+                "nf_total_carbohydrate": 4,
+                "nf_serving_size_unit": "oz",
+                "nf_serving_weight_grams": 45
+            }
+        },
+        {
+            "_index": "f762ef22-e660-434f-9071-a10ea6691c27",
+            "_type": "item",
+            "_id": "51c53f4a97c3e6efadd5ae5d",
+            "_score": 1.7347447,
+            "fields": {
+                "item_id": "51c53f4a97c3e6efadd5ae5d",
+                "item_name": "Carrots",
+                "brand_name": "Bolthouse",
+                "nf_total_carbohydrate": 7,
+                "nf_serving_size_unit": "g",
+                "nf_serving_weight_grams": 78
+            }
+        },
+        {
+            "_index": "f762ef22-e660-434f-9071-a10ea6691c27",
+            "_type": "item",
+            "_id": "53444dfa9a631f1645ecfd09",
+            "_score": 1.7347447,
+            "fields": {
+                "item_id": "53444dfa9a631f1645ecfd09",
+                "item_name": "Carrots",
+                "brand_name": "Saladworks",
+                "nf_total_carbohydrate": 3,
+                "nf_serving_size_unit": "salad",
+                "nf_serving_weight_grams": null
+            }
+        }
+    ]
+}
