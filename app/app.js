@@ -20,11 +20,11 @@ app.config( ($routeProvider) => {
   $routeProvider
   .when('/', {
     templateUrl: 'partials/login.html',
-    controller: 'UserController'
+    controller: 'ProfileController'
   })
-  .when('/register/view', {
-    templateUrl: 'partials/register.html',
-    controller: 'UserController'
+  .when('/profileform/view', {
+    templateUrl: 'partials/profileform.html',
+    controller: 'ProfileController'
   })
   .when('/food/view', {
     templateUrl: 'partials/food.html',
