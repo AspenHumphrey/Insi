@@ -22,9 +22,13 @@ app.config( ($routeProvider) => {
     templateUrl: 'partials/login.html',
     controller: 'UserController'
   })
-  .when('/login/view', {
-    templateUrl: 'partials/profile.html',
-    controller: 'ProfileController'
+  .when('/register/view', {
+    templateUrl: 'partials/register.html',
+    controller: 'UserController'
+  })
+  .when('/food/view', {
+    templateUrl: 'partials/food.html',
+    controller: 'FoodController'
   })
   .otherwise('/');
 });

@@ -32,7 +32,7 @@ app.factory("UserFactory", function($q, $http, FirebaseUrl, FBCreds) {
   let createUser = (userObj) => {
     return firebase.auth().createUserWithEmailAndPassword(userObj.email, userObj.password)
     .then((userObj)=>{
-      $http.post(`${FirebaseUrl}/users.json`, JSON.stringify(userObj));
+      $http.post(`${FirebaseUrl}/users.json`, JSON.stringify(userObj.uid));
     })
     .catch( (err) => {
       console.log("error", err.message);
@@ -60,25 +60,54 @@ app.factory("UserFactory", function($q, $http, FirebaseUrl, FBCreds) {
     });
   };
 
-  let updateProfileStatus = (profile) => {
+   let getProfile = (profileId) => {
+    console.log("userId", profileId);
+    return $q( (resolve, reject) => {
+      $http.get(`${FirebaseUrl}/users.json?orderBy="uid"&equalTo="${profileId}"`)
+      .then( (profileData) => {
+        resolve(profileData);
+      })
+      .catch( (err) => {
+        console.log("oops", err);
+        reject(err);
+      });
+    });
+  };
+
+    let postNewProfile = (newProfile) => {
+    return $q( (resolve, reject) => {
+      $http.post(`${FirebaseUrl}/users.json`,
+        angular.toJson(newProfile))
+      .then( (newProfileData) => {
+        resolve(newProfileData);
+      })
+      .catch( (err) => {
+        reject(err);
+      });
+    });
+  };
+
+  let updateProfile = (profile) => {
     return $q( (resolve, reject) => {
       let profileId = profile.id;
+      console.log("profileId", profileId);
       // PUT the entire obj to FB
       if (profileId) {
         $http.put(`${FirebaseUrl}/users/${profileId}.json`,
           angular.toJson(profile))
         .then( (data) => {
+          console.log("data", data);
           resolve(data);
         })
         .catch( (err) => {
           reject(err);
         });
       } else {
-        console.log("I'm burned out for the day. Go home");
+        console.log("Go home");
       }
     });
   };
 
-  return {isAuthenticated, getUser, createUser, loginUser, logoutUser, updateProfileStatus};
+  return {isAuthenticated, getUser, createUser, loginUser, logoutUser, postNewProfile, updateProfile};
 });
 
