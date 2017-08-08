@@ -2,24 +2,42 @@
 <html>
 <head>
 	<title>insi</title>
+	 <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="lib/node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
 </head>
-<body>
+<body ng-app="App">
+
+<h1>insi</h1>
+
+	<div>
+		<div ng-view><div>
+	</div>
+
+	<div>
+		<div ng-include="'partials/profile.html'"></div>
+	</div>
+
 
 <!-- third party scripts -->
-<script src="lib/node_modules/jquery/dist/jquery.min.js"></script>
-<script src="lib/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+<!-- <script src="lib/node_modules/jquery/dist/jquery.min.js"></script> -->
+<!-- <script src="lib/node_modules/bootstrap/dist/js/bootstrap.min.js"></script> -->
 <script src="lib/node_modules/angular/angular.min.js"></script>
 <script src="lib/node_modules/angular-route/angular-route.min.js"></script>
+<script src="lib/node_modules/firebase/firebase.js"></script>
 <!-- apps -->
 <script src="app/app.js"></script>
+<!-- providers -->
+<script src="app/value/fb-creds.js"></script>
 <!-- factories -->
 <script src="app/factories/UserFactory.js"></script>
 <script src="app/factories/ProfileFactory.js"></script>
-<script src="app/factories/FoodFactory.js"></script>
+<!-- <script src="app/factories/FoodFactory.js"></script> -->
 <!-- controllers -->
 <script src="app/controllers/UserController.js"></script>
+<!-- <script src="app/controllers/FoodController.js"></script> -->
 <script src="app/controllers/ProfileController.js"></script>
-<script src="app/controllers/UserController.js"></script>
+
 
 
 </body>
