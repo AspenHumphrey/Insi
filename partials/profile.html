@@ -1,0 +1,67 @@
+<!-- user profile name
+image
+first and last name
+age
+weight
+height
+breakfast 1:15
+lunch 1:15
+snack 1:18
+dinner 1:18
+emergency contact info name, relationship, phone -->
+
+<div class="col-xs-12">
+  <h1>{{createProfile}}</h1>
+  <div class="form-group">
+    <label>First Name</label>
+    <input type="text" class="form-control" placeholder="First Name" ng-model="userProfile.firstName"/>
+  </div>
+  <div class="form-group">
+    <label>Last Name</label>
+    <input type="text" class="form-control" placeholder="Last Name" ng-model="userProfile.lastName"/>
+  </div>
+  <div class="form-group">
+    <label>Age</label>
+    <input type="text" class="form-control" placeholder="5" ng-model="userProfile.age"/>
+  </div>
+  <div class="form-group">
+    <label>Weight</label>
+    <input type="text" class="form-control" placeholder="50lbs" ng-model="userProfile.weight"/>
+  </div>
+  <div class="form-group">
+    <label>Height</label>
+    <input type="text" class="form-control" placeholder="4'6" ng-model="userProfile.height"/>
+  </div>
+  <div class="form-group">
+    <label>Breakfast Insulin : Carbohydrate</label>
+    <input type="text" class="form-control" placeholder="1:15" ng-model="userProfile.breakfast"/>
+  </div>
+   <div class="form-group">
+    <label>Lunch Insulin : Carbohydrate</label>
+    <input type="text" class="form-control" placeholder="1:15" ng-model="userProfile.lunch"/>
+  </div>
+   <div class="form-group">
+    <label>Snack Insulin : Carbohydrate</label>
+    <input type="text" class="form-control" placeholder="1:18" ng-model="userProfile.snack"/>
+  </div>
+   <div class="form-group">
+    <label>Dinner Insulin : Carbohydrate</label>
+    <input type="text" class="form-control" placeholder="1:18" ng-model="userProfile.dinner"/>
+  </div>
+
+   <div class="form-group">
+    <label>Emergency Contact Name</label>
+    <input type="text" class="form-control" placeholder="Thor" ng-model="userProfile.ecName"/>
+  </div>
+
+   <div class="form-group">
+    <label>Emergency Contact Relationship</label>
+    <input type="text" class="form-control" placeholder="1:15" ng-model="userProfile.ecRelationship"/>
+  </div>
+
+   <div class="form-group">
+    <label>Emergency Contact Phone</label>
+    <input type="text" class="form-control" placeholder="1:15" ng-model="userProfile.ecPhone"/>
+  </div>
+  <button class="btn btn-default" ng-click="saveProfile()">Save</button>
+</div>
