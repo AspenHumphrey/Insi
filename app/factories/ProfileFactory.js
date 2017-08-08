@@ -1,6 +1,6 @@
 'use strict';
 
-app.factory("UserFactory", function($q, $http, FirebaseUrl, FBCreds) {
+app.factory("ProfileFactory", function($q, $http, FirebaseUrl, FBCreds) {
 
   var config = {
     apiKey: FBCreds.key,
@@ -9,14 +9,14 @@ app.factory("UserFactory", function($q, $http, FirebaseUrl, FBCreds) {
 
   firebase.initializeApp(config);
 
-  let currentUser = null;
+  let currentProfile = null;
 
   let isAuthenticated = function() {
     console.log("isAuthenticated called");
     return new Promise( (resolve, reject) => {
-      firebase.auth().onAuthStateChanged(function(user) {
-        if (user) {
-          currentUser = user.uid;
+      firebase.auth().onAuthStateChanged(function(profile) {
+        if (profile) {
+          currentProfile = profile.uid;
           resolve(true);
         } else {
           resolve(false);
@@ -25,27 +25,27 @@ app.factory("UserFactory", function($q, $http, FirebaseUrl, FBCreds) {
     });
   };
 
-  let getUser = () => {
-    return currentUser;
+  let getCurrentProfile = () => {
+    return currentProfile;
   };
 
-  let createUser = (userObj) => {
-    return firebase.auth().createUserWithEmailAndPassword(userObj.email, userObj.password)
-    .then((userObj)=>{
-      $http.post(`${FirebaseUrl}/users.json`, JSON.stringify(userObj.uid));
+  let createProfile = (profileObj) => {
+    return firebase.auth().createUserWithEmailAndPassword(profileObj.email, profileObj.password)
+    .then((profileObj)=>{
+      $http.post(`${FirebaseUrl}/profiles.json`, JSON.stringify(profileObj.uid));
     })
     .catch( (err) => {
       console.log("error", err.message);
     });
   };
 
-  let loginUser = (userObj) => {
-    console.log("user", userObj);
+  let loginUserProfile = (profileObj) => {
+    console.log("user", profileObj);
     return $q( (resolve, reject) => {
-      firebase.auth().signInWithEmailAndPassword(userObj.email, userObj.password)
-      .then( (user) => {
-        currentUser = user.uid;
-        resolve(user);
+      firebase.auth().signInWithEmailAndPassword(profileObj.email, profileObj.password)
+      .then( (profile) => {
+        currentProfile = profile.uid;
+        resolve(profile);
       })
       .catch( (err) => {
         console.log("error", err.message);
@@ -53,7 +53,7 @@ app.factory("UserFactory", function($q, $http, FirebaseUrl, FBCreds) {
     });
   };
 
-  let logoutUser = () => {
+  let logoutUserProfile = () => {
     return firebase.auth().signOut()
     .catch( (err) => {
       console.log("error", err.message);
@@ -63,7 +63,7 @@ app.factory("UserFactory", function($q, $http, FirebaseUrl, FBCreds) {
    let getProfile = (profileId) => {
     console.log("userId", profileId);
     return $q( (resolve, reject) => {
-      $http.get(`${FirebaseUrl}/users.json?orderBy="uid"&equalTo="${profileId}"`)
+      $http.get(`${FirebaseUrl}/profiles.json?orderBy="uid"&equalTo="${profileId}"`)
       .then( (profileData) => {
         resolve(profileData);
       })
@@ -76,7 +76,7 @@ app.factory("UserFactory", function($q, $http, FirebaseUrl, FBCreds) {
 
     let postNewProfile = (newProfile) => {
     return $q( (resolve, reject) => {
-      $http.post(`${FirebaseUrl}/users.json`,
+      $http.post(`${FirebaseUrl}/profiles.json`,
         angular.toJson(newProfile))
       .then( (newProfileData) => {
         resolve(newProfileData);
@@ -93,7 +93,7 @@ app.factory("UserFactory", function($q, $http, FirebaseUrl, FBCreds) {
       console.log("profileId", profileId);
       // PUT the entire obj to FB
       if (profileId) {
-        $http.put(`${FirebaseUrl}/users/${profileId}.json`,
+        $http.put(`${FirebaseUrl}/profiles/${profileId}.json`,
           angular.toJson(profile))
         .then( (data) => {
           console.log("data", data);
@@ -108,6 +108,14 @@ app.factory("UserFactory", function($q, $http, FirebaseUrl, FBCreds) {
     });
   };
 
-  return {isAuthenticated, getUser, createUser, loginUser, logoutUser, postNewProfile, updateProfile};
+  return {isAuthenticated, 
+          getCurrentProfile, 
+          createProfile, 
+          loginUserProfile, 
+          logoutUserProfile, 
+          getProfile, 
+          postNewProfile, 
+          updateProfile
+  };
 });
 

@@ -1,6 +1,6 @@
 'use strict';
 
-app.controller("UserController", function($scope, $window, UserFactory) {
+app.controller("ProfileController", function($scope, $window, ProfileFactory) {
 
   $scope.account = {
     email: "",
@@ -9,25 +9,25 @@ app.controller("UserController", function($scope, $window, UserFactory) {
 
   $scope.register = () => {
     console.log("you clicked register");
-    UserFactory.createUser($scope.account)
-    .then( (userData) => {
-      console.log("New User!", userData);
+    ProfileFactory.createProfile($scope.account)
+    .then( (profileData) => {
+      console.log("New User!", profileData);
       $scope.registerLogin();
     });
   };
 
    $scope.registerLogin = () => {
-    UserFactory.loginUser($scope.account)
-    .then( (userData) => {
-      console.log("userData", userData);
-      $window.location.href = '#!/register/view';
+    ProfileFactory.loginUserProfile($scope.account)
+    .then( (profileData) => {
+      console.log("profileData1", profileData);
+      $window.location.href = '#!/profileform/view';
     });
   };
 
   $scope.login = () => {
-    UserFactory.loginUser($scope.account)
-    .then( (userData) => {
-      console.log("userData", userData);
+    ProfileFactory.loginUserProfile($scope.account)
+    .then( (profileData) => {
+      console.log("profileData2", profileData);
       $window.location.href = '#!/food/view';
     });
   };
@@ -46,12 +46,12 @@ app.controller("UserController", function($scope, $window, UserFactory) {
     ecName: "",
     ecRelationship: "",
     ecPhone: "",
-    uid: UserFactory.getUser()
+    uid: ProfileFactory.getCurrentProfile()
   };
 
   $scope.saveProfile = () => {
       console.log("userProfile", $scope.userProfile);
-    UserFactory.postNewProfile($scope.userProfile)
+    ProfileFactory.postNewProfile($scope.userProfile)
     .then( (data) => {
       console.log("new register data", data);
       $window.location.href = '#!/food/view';
