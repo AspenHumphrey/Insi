@@ -11,9 +11,8 @@ function fetchProfile() {
       let profileData = profileList.data;
       Object.keys(profileData).forEach( (key) => {
         profileData[key].id = key;
-        profileArr.push(profileData[key]);
       });
-      $scope.todos = profileArr;
+      $scope.userProfile = profileData;
     })
     .catch( (err) => {
       console.log("error!", err);

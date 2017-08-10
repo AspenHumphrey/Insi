@@ -34,8 +34,8 @@ app.config( ($routeProvider) => {
     templateUrl: 'partials/profileform.html',
     controller: 'EditProfileController'
   })
-  .when('/profileview/view', {
-    templateUrl: 'partials/profileform.html',
+  .when('/profileview/view/:profileId', {
+    templateUrl: 'partials/profileview.html',
     controller: 'ProfileController'
   })
   .otherwise('/');

@@ -12,7 +12,7 @@ $scope.saveProfile = () => {
     ProfileFactory.updateProfile($scope.userProfile)
     .then( (data) => {
       console.log("edited data", data);
-      $window.location.href = '#!/profileview/view';
+      $window.location.href = `#!/profileview/view/${data.data.id}`;
     });
   };
 });

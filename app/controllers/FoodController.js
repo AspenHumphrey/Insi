@@ -1,7 +1,13 @@
 'use strict';
 // calculator!
-app.controller('FoodController', function($scope, $q, $window, $routeParams){
+app.controller('FoodController', function($scope, $q, $window, $routeParams, FoodFactory){
 
+$scope.test = () => {
+	FoodFactory.getFoodData()
+	.then( (data) => {
+		console.log("data", data);
+	});
+};
 
 
 });
