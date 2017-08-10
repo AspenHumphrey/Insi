@@ -3,3 +3,4 @@ css/
 lib/.sass-cache
 lib/package-lock.json
 app/value/fb-creds.js
+app/value/api-creds.js

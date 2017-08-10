@@ -1,5 +1,10 @@
 'use strict';
 // calculator!
+app.controller('FoodController', function($scope, $q, $window, $routeParams){
+
+
+
+});
 // all things food/API search-amount/Profile Meals
 
 // food search- (via API from FoodFactory) - gets: 

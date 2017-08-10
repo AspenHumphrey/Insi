@@ -2,70 +2,16 @@
 
 app.factory("ProfileFactory", function($q, $http, FirebaseUrl, FBCreds) {
 
-  var config = {
-    apiKey: FBCreds.key,
-    authDomain: FBCreds.authDomain
-  };
-
-  firebase.initializeApp(config);
-
-  let currentProfile = null;
-
-  let isAuthenticated = function() {
-    console.log("isAuthenticated called");
-    return new Promise( (resolve, reject) => {
-      firebase.auth().onAuthStateChanged(function(profile) {
-        if (profile) {
-          currentProfile = profile.uid;
-          resolve(true);
-        } else {
-          resolve(false);
-        }
-      });
-    });
-  };
-
-  let getCurrentProfile = () => {
-    return currentProfile;
-  };
-
-  let createProfile = (profileObj) => {
-    return firebase.auth().createUserWithEmailAndPassword(profileObj.email, profileObj.password)
-    .then((profileObj)=>{
-      $http.post(`${FirebaseUrl}/profiles.json`, JSON.stringify(profileObj.uid));
-    })
-    .catch( (err) => {
-      console.log("error", err.message);
-    });
-  };
-
-  let loginUserProfile = (profileObj) => {
-    console.log("user", profileObj);
-    return $q( (resolve, reject) => {
-      firebase.auth().signInWithEmailAndPassword(profileObj.email, profileObj.password)
-      .then( (profile) => {
-        currentProfile = profile.uid;
-        resolve(profile);
-      })
-      .catch( (err) => {
-        console.log("error", err.message);
-      });
-    });
-  };
-
-  let logoutUserProfile = () => {
-    return firebase.auth().signOut()
-    .catch( (err) => {
-      console.log("error", err.message);
-    });
-  };
 
    let getProfile = (profileId) => {
     console.log("userId", profileId);
     return $q( (resolve, reject) => {
       $http.get(`${FirebaseUrl}/profiles.json?orderBy="uid"&equalTo="${profileId}"`)
       .then( (profileData) => {
-        resolve(profileData);
+        for (let key in profileData.data) {
+          profileData.data[key].id = key;
+          }
+        resolve(profileData.data);
       })
       .catch( (err) => {
         console.log("oops", err);
@@ -89,11 +35,10 @@ app.factory("ProfileFactory", function($q, $http, FirebaseUrl, FBCreds) {
 
   let updateProfile = (profile) => {
     return $q( (resolve, reject) => {
-      let profileId = profile.id;
-      console.log("profileId", profileId);
+      console.log("profile", profile);
       // PUT the entire obj to FB
-      if (profileId) {
-        $http.put(`${FirebaseUrl}/profiles/${profileId}.json`,
+      if (profile) {
+        $http.put(`${FirebaseUrl}/profiles/${profile.id}.json`,
           angular.toJson(profile))
         .then( (data) => {
           console.log("data", data);
@@ -108,14 +53,27 @@ app.factory("ProfileFactory", function($q, $http, FirebaseUrl, FBCreds) {
     });
   };
 
-  return {isAuthenticated, 
-          getCurrentProfile, 
-          createProfile, 
-          loginUserProfile, 
-          logoutUserProfile, 
+  let deleteProfile = (profileId) => {
+    return $q( (resolve, reject) => {
+      if (profileId) {
+        $http.delete(`${FirebaseUrl}profiles/${profileId}.json`)
+        .then( (data) => {
+          resolve(data);
+        })
+        .catch( (err) => {
+          reject(err);
+        });
+      } else {
+        console.log("No id passed in");
+      }
+    });
+  };
+
+  return { 
           getProfile, 
           postNewProfile, 
-          updateProfile
+          updateProfile,
+          deleteProfile
   };
 });
 

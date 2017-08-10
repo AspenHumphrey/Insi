@@ -20,15 +20,23 @@ app.config( ($routeProvider) => {
   $routeProvider
   .when('/', {
     templateUrl: 'partials/login.html',
-    controller: 'ProfileController'
+    controller: 'UserController'
   })
   .when('/profileform/view', {
     templateUrl: 'partials/profileform.html',
-    controller: 'ProfileController'
+    controller: 'ProfileAddController'
   })
   .when('/food/view', {
     templateUrl: 'partials/food.html',
     controller: 'FoodController'
+  })
+  .when('/profileform/edit/:profileId', {
+    templateUrl: 'partials/profileform.html',
+    controller: 'EditProfileController'
+  })
+  .when('/profileview/view', {
+    templateUrl: 'partials/profileform.html',
+    controller: 'ProfileController'
   })
   .otherwise('/');
 });
