@@ -3,6 +3,7 @@
 
 app.controller("ProfileAddController", function($scope, $window, ProfileFactory, UserFactory) {
 
+  $scope.formTitle = "Create Your Profile!";
   $scope.userProfile = {
     firstName: "",
     lastName: "",

@@ -1,9 +1,19 @@
-<div> 
+<div ng-include="'partials/navbar.html'"></div>
 <h1>Your INSI Profile</h1> 
 
+<h4>IMAGE PLACEHOLDER (STRETCH) </h4>
+Name: {{userProfile.firstName}} {{userProfile.lastName}}
+Age: {{userProfile.age}}
+Weight: {{userProfile.weight}}
+Height: {{userProfile.height}}
 
+<h4>How much insulin do you need?</h4>
+Breakfast Insulin: {{userProfile.breakfast}}
+Lunch Insulin: {{userProfile.lunch}}
+Snack Insulin: {{userProfile.snack}}
+Dinner Insulin: {{userProfile.dinner}}
 
-
-
-
-</div> 
+<h4>Emergency Contact Information</h4>
+Name: {{userProfile.ecName}}
+Relationship: {{userProfile.ecRelationship}}
+Phone: {{userProfile.ecPhone}}

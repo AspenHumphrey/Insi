@@ -1,6 +1,8 @@
 'use strict';
 app.controller("EditProfileController", function($scope, $window, $routeParams, ProfileFactory, UserFactory){
 
+$scope.formTitle = "Edit Your Profile";
+
 ProfileFactory.getProfile($routeParams.profileId)
 .then( (data) => {
 	console.log("data from edit contrl", data);

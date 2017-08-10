@@ -8,6 +8,7 @@ app.factory("ProfileFactory", function($q, $http, FirebaseUrl, FBCreds) {
     return $q( (resolve, reject) => {
       $http.get(`${FirebaseUrl}/profiles.json?orderBy="uid"&equalTo="${profileId}"`)
       .then( (profileData) => {
+        // console.log("profileData", profileData);
         let dataKey;
         for (let key in profileData.data) {
           profileData.data[key].id = key;
