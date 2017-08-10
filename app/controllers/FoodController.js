@@ -2,10 +2,13 @@
 // calculator!
 app.controller('FoodController', function($scope, $q, $window, $routeParams, FoodFactory){
 
-$scope.test = () => {
-	FoodFactory.getFoodData()
+$scope.search = "";
+
+
+$scope.calculate = () => {
+	FoodFactory.getFoodData($scope.search)
 	.then( (data) => {
-		console.log("data", data);
+		// console.log("data", data);
 	});
 };
 
