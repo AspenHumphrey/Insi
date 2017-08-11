@@ -4,7 +4,7 @@ app.factory("FoodFactory", function($q, $http, FirebaseUrl, FBCreds){
 // search food
 // carbs
 // amount/weight in g
-// /v2/autocomplete?q
+
 
 //  authDomain https://api.nutritionix.com/v1_1/search/carrot?results=0:20
 // &fields=item_name,brand_name,item_id,nf_total_carbohydrate,nf_serving_size_unit,

@@ -3,6 +3,7 @@
 app.controller('FoodController', function($scope, $q, $window, $routeParams, FoodFactory){
 
 $scope.search = "";
+// $scope.userProfile = data;
 
 
 $scope.calculate = () => {
@@ -12,8 +13,22 @@ $scope.calculate = () => {
 	});
 };
 
-
 });
+
+
+
+
+// $scope.selectAmount = () => {
+//  if ()
+
+// };
+
+// $scope.selectMeal = () => {
+// // {{data.breakfast}} data.lunch data.snack data.dinner
+// };
+
+
+// });
 // all things food/API search-amount/Profile Meals
 
 // food search- (via API from FoodFactory) - gets: 
