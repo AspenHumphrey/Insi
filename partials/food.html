@@ -5,18 +5,29 @@
 <!--food search -->
       <div class="input-group">
         <span class="input-group-btn">
-          <button class="btn btn-default"><i class="fa fa-search" aria-hidden="true"></i></button>
         </span>
         <h2>Search your food!!</h2>
-        <input type="text" class="form-control" placeholder="Search for..." ng-model="search">
+        <input type="text" class="form-control" placeholder="Search for..." ng-model="search"/><button class="btn btn-default" ng-click="searchFood()"><i class="fa fa-search" aria-hidden="true"></i></button>
       </div>
+
+<div ng-repeat="food in foodArr">
+<span ng-show="$index === item">
+<!-- food information -->
+	<div>
+		<h3>Item Name: {{food.fields.item_name}}</h3>
+		<h4>Serving Per Unit: {{food.fields.nf_serving_size_unit}}</h4>
+		<h4>Total Number of Carbohydrates: {{food.fields.nf_total_carbohydrate}}</h4>
+	</div>
 <!-- amount!-->
-<div>
-	<h2>How much did you eat?</h2>
-	<button class="btn btn-default" ng-click="selectAmount()">1/4 cup</button>
-	<button class="btn btn-default" ng-click="selectAmount()">1/2 cup</button>
-	<button class="btn btn-default" ng-click="selectAmount()">1 cup</button>
+	<div>
+		<h2>How much did you eat?</h2>
+		<button class="btn btn-default" ng-click="selectAmount()">1/4</button>
+		<button class="btn btn-default" ng-click="selectAmount()">1/2</button>
+		<button class="btn btn-default" ng-click="selectAmount()">whole</button>
+	</div>
+</span>
 </div>
+
 <!-- meal -->
 <div>
 	<h2>Select your meal!</h2>
@@ -27,7 +38,7 @@
 </div>
 <!-- calculate button -->
 <div>
-	<button class="btn btn-default" ng-click="calculate()">Caculate!!</button>
+	<!-- <button class="btn btn-default" ng-click="calculate()">Caculate!!</button> -->
 </div>
 
 </div>
