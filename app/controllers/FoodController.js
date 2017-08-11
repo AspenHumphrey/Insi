@@ -40,3 +40,5 @@ $scope.calculate = () => {
 // breakfast lunch snack dinner
 
 // calculate function
+
+// select multiple foods to calculate

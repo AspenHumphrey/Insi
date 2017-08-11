@@ -1,6 +1,6 @@
 'use strict';
 
-app.controller("NavController", function($scope, $window, ProfileFactory) {
+app.controller("NavController", function($scope, $window, ProfileFactory, UserFactory) {
 
   $scope.isLoggedIn = false;
   $scope.currentUser = null;
@@ -22,7 +22,7 @@ app.controller("NavController", function($scope, $window, ProfileFactory) {
 
   $scope.logout = () => {
     console.log("logout clicked");
-    ProfileFactory.logoutUserProfile();
+    UserFactory.logoutUser();
   };
 
 });
