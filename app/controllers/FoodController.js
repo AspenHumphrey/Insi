@@ -32,34 +32,46 @@ $scope.item = 0;
 		});
 	}
 
+// $scope.foodArr.fields.nf_total_carbohydrate
+$scope.selectAmountQuarter = (foodArr) => {
+	let carbs = $scope.foodArr[0].fields.nf_total_carbohydrate;
+	console.log("carbsQuarter", Math.floor(carbs * 0.25));
+	return Math.floor(carbs * 0.25);
+};
 
+$scope.selectAmountHalf = (foodArr) => {
+	let carbs = $scope.foodArr[0].fields.nf_total_carbohydrate;
+	console.log("carbsHalf", Math.floor(carbs * 0.5));
+	return Math.floor(carbs * 0.5);
+};
 
-});
+$scope.selectAmountWhole = (foodArr) => {
+	let carbs = $scope.foodArr[0].fields.nf_total_carbohydrate;
+	console.log("carbsWhole", carbs);
+	return carbs;
+};
 
 // $scope.breakfast = () => {
 // 	$scope.userProfile.breakfast
 // };
 
 // $scope.lunch = () => {
-// 	// $scope.userProfile.lunch
+// 	$scope.userProfile.lunch
 // };
 
 // $scope.snack = () => {
-// 		// $scope.userProfile.snack
+// 		$scope.userProfile.snack
 
 // };
 
 // $scope.dinner = () => {
-// 	// $scope.userProfile.dinner
-
-
-
-
-
-// $scope.selectAmount = () => {
-//  if ()
+// 	$scope.userProfile.dinner
 
 // };
+
+
+});
+
 
 
 
