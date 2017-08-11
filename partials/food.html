@@ -1,1 +1,33 @@
-<h1>food food food<h1>
+<div ng-include="'partials/navbar.html'"></div>
+
+  <h1>Calculate your Insulin!</h1>
+
+<!--food search -->
+      <div class="input-group">
+        <span class="input-group-btn">
+          <button class="btn btn-default"><i class="fa fa-search" aria-hidden="true"></i></button>
+        </span>
+        <h2>Search your food!!</h2>
+        <input type="text" class="form-control" placeholder="Search for..." ng-model="search">
+      </div>
+<!-- amount!-->
+<div>
+	<h2>How much did you eat?</h2>
+	<button class="btn btn-default" ng-click="selectAmount()">1/4 cup</button>
+	<button class="btn btn-default" ng-click="selectAmount()">1/2 cup</button>
+	<button class="btn btn-default" ng-click="selectAmount()">1 cup</button>
+</div>
+<!-- meal -->
+<div>
+	<h2>Select your meal!</h2>
+	<button class="btn btn-default" ng-click="selectMeal(data.breakfast)">Breakfast</button>
+	<button class="btn btn-default" ng-click="selectMeal(data.lunch)">Lunch</button>
+	<button class="btn btn-default" ng-click="selectMeal(data.snack)">Snack</button>
+	<button class="btn btn-default" ng-click="selectMeal(data.dinner)">Dinner</button>
+</div>
+<!-- calculate button -->
+<div>
+	<button class="btn btn-default" ng-click="calculate()">Caculate!!</button>
+</div>
+
+</div>

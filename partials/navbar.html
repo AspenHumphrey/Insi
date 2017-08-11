@@ -9,20 +9,15 @@
       </button>
       <a class="navbar-brand" href="#/">INSI</a>
     </div>
-    <!-- search -->
-    <div class="col-xs-6 searchBox" ng-show="isLoggedIn">
-      <div class="input-group">
-        <span class="input-group-btn">
-          <button class="btn btn-default"><i class="fa fa-search" aria-hidden="true"></i></button>
-        </span>
-        <input type="text" class="form-control" placeholder="Search for..." ng-model="searchText.searchTerm">
-      </div>
-    </div>
-    <!-- Collect the nav links, forms, and other content for toggling -->
+    
+    
+ 
+ <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
         <li ng-show="!isLoggedIn"><a ng-href="#!/login">Login</a></li>
-        <li ng-show="isLoggedIn"><a ng-href="#!/profileform/edit">Edit Profile</a></li>
+        <li ng-show="isLoggedIn"><a ng-href="#!/profileform/edit/{{currentUser}}" >Edit Profile</a></li>
+        <li ng-show="isLoggedIn"><a ng-href="#!/profileview/view/{{currentUser}}">View Profile</a></li>
         <li ng-show="isLoggedIn"><a ng-href="#!/food/view">Calculator</a></li>
         <li ng-show="isLoggedIn"><a ng-href="#!/logout" ng-click="logout()">Logout</a></li>
       </ul>

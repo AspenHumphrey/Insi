@@ -1,60 +1,35 @@
 'use strict';
 
-app.controller("ProfileController", function($scope, $window, ProfileFactory) {
+app.controller("ProfileController", function($scope, $window, ProfileFactory, UserFactory){
 
-  $scope.account = {
-    email: "",
-    password: ""
-  };
-
-  $scope.register = () => {
-    console.log("you clicked register");
-    ProfileFactory.createProfile($scope.account)
-    .then( (profileData) => {
-      console.log("New User!", profileData);
-      $scope.registerLogin();
+// function fetchProfile() {
+    let profileArr = [];
+    console.log("Fetch called");
+    ProfileFactory.getProfile(UserFactory.getCurrentUser())
+    .then( (profileList) => {
+      console.log("profile Data", profileList);
+      $scope.userProfile = profileList;
+      console.log("$scope.userProfile", $scope.userProfile);
+    })
+    .catch( (err) => {
+      console.log("error!", err);
     });
-  };
+  // }
 
-   $scope.registerLogin = () => {
-    ProfileFactory.loginUserProfile($scope.account)
-    .then( (profileData) => {
-      console.log("profileData1", profileData);
-      $window.location.href = '#!/profileform/view';
-    });
-  };
-
-  $scope.login = () => {
-    ProfileFactory.loginUserProfile($scope.account)
-    .then( (profileData) => {
-      console.log("profileData2", profileData);
-      $window.location.href = '#!/food/view';
-    });
-  };
-
-  $scope.createProfile = "Create Your User Profile";
-  $scope.userProfile = {
-    firstName: "",
-    lastName: "",
-    age: "",
-    weight: "",
-    height: "",
-    breakfast: "",
-    lunch: "",
-    snack: "",
-    dinner: "",
-    ecName: "",
-    ecRelationship: "",
-    ecPhone: "",
-    uid: ProfileFactory.getCurrentProfile()
-  };
-
-  $scope.saveProfile = () => {
-      console.log("userProfile", $scope.userProfile);
-    ProfileFactory.postNewProfile($scope.userProfile)
+  $scope.deleteProfile = (profileId) => {
+    console.log("delete called", profileId);
+    ProfileFactory.deleteProfile(profileId)
     .then( (data) => {
-      console.log("new register data", data);
-      $window.location.href = '#!/food/view';
+      console.log("removed item", data);
+      $window.location.href = '#!/';
+    });
+  };
+
+  $scope.updateProfile = (profileItem) => {
+    console.log("profile updated");
+    ProfileFactory.updateProfile(profileItem)
+    .then( (data) => {
+      console.log("Updated completed status");
     });
   };
 
