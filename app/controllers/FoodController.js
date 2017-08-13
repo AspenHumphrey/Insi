@@ -1,11 +1,25 @@
 'use strict';
+
+// all things food/API search-amount/Profile Meals
+
+// food search- (via API from FoodFactory) - gets: 
+// food search (carbs)
+
+// select meal from user profile
+// breakfast lunch snack dinner
+
+
+
+// select multiple foods to calculate 
+// what if the person eats more than one "whole" 
+// need to make a function that will calculate multi..
+
+
 // calculator!
 app.controller('FoodController', function($scope, $q, $window, $routeParams, FoodFactory){
 
 $scope.search = "";
 $scope.item = 0;
-// $scope.userProfile = data;
-
 
 	$scope.searchFood = () => {
 		FoodFactory.getFoodData($scope.search)
@@ -32,7 +46,9 @@ $scope.item = 0;
 		});
 	}
 
-// $scope.foodArr.fields.nf_total_carbohydrate
+// amount btns linked to food.html
+// takes selected food amt from foodArr and multiplies it by decimal amt
+
 $scope.selectAmountQuarter = (foodArr) => {
 	let carbs = $scope.foodArr[0].fields.nf_total_carbohydrate;
 	console.log("carbsQuarter", Math.floor(carbs * 0.25));
@@ -51,9 +67,14 @@ $scope.selectAmountWhole = (foodArr) => {
 	return carbs;
 };
 
-// $scope.breakfast = () => {
-// 	$scope.userProfile.breakfast
-// };
+// uses insulin info from profile to calculate "meal"
+// will plug into amount(s) for (each) food item
+
+$scope.breakfast = () => {
+	let breakfast  = $scope.userProfile.breakfast;
+	console.log("breakfast", Math.floor(breakfast * carbs));
+	return Math.floor(breakfast * carbs);
+};
 
 // $scope.lunch = () => {
 // 	$scope.userProfile.lunch
@@ -71,21 +92,3 @@ $scope.selectAmountWhole = (foodArr) => {
 
 
 });
-
-
-
-
-// });
-// all things food/API search-amount/Profile Meals
-
-// food search- (via API from FoodFactory) - gets: 
-// food search (carbs)
-
-// amount buttons- 1/4c 1/2c 1c
-
-// select meal from user profile
-// breakfast lunch snack dinner
-
-
-
-// select multiple foods to calculate
