@@ -38,9 +38,9 @@ app.config( ($routeProvider) => {
     templateUrl: 'partials/profileview.html',
     controller: 'ProfileController'
   })
-  .when('/results/view', {
+  .when('/results/view/:results', {
     templateUrl: 'partials/results.html',
-    controller: 'FoodController'
+    controller: 'ResultsController'
   })
   .otherwise('/');
 });

@@ -27,6 +27,8 @@ app.factory("FoodFactory", function($q, $http, FirebaseUrl, FBCreds){
         });
       });
     };
-	return { getFoodData };
+	return { 
+		getFoodData 
+	};
 
 });

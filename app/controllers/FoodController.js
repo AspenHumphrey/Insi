@@ -8,18 +8,23 @@
 // select meal from user profile
 // breakfast lunch snack dinner
 
-
-
 // select multiple foods to calculate 
 // what if the person eats more than one "whole" 
 // need to make a function that will calculate multi..
 
-
 // calculator!
-app.controller('FoodController', function($scope, $q, $window, $routeParams, FoodFactory){
+app.controller('FoodController', function($scope, $q, $window, $routeParams, FoodFactory, ProfileFactory, UserFactory){
 
-$scope.search = "";
-$scope.item = 0;
+	$scope.search = "";
+	$scope.item = 0;
+
+	let currentProfileArr = [];
+  console.log("Fetch called");
+  ProfileFactory.getProfile(UserFactory.getCurrentUser())
+  .then( (profileData) => {
+  	console.log("profile Data", profileData);
+    currentProfileArr = profileData;
+  });
 
 	$scope.searchFood = () => {
 		FoodFactory.getFoodData($scope.search)
@@ -49,46 +54,51 @@ $scope.item = 0;
 // amount btns linked to food.html
 // takes selected food amt from foodArr and multiplies it by decimal amt
 
-$scope.selectAmountQuarter = (foodArr) => {
-	let carbs = $scope.foodArr[0].fields.nf_total_carbohydrate;
-	console.log("carbsQuarter", Math.floor(carbs * 0.25));
-	return Math.floor(carbs * 0.25);
-};
+	$scope.carbs = null;
+	$scope.quarter = null;
+	$scope.half= null;
 
-$scope.selectAmountHalf = (foodArr) => {
-	let carbs = $scope.foodArr[0].fields.nf_total_carbohydrate;
-	console.log("carbsHalf", Math.floor(carbs * 0.5));
-	return Math.floor(carbs * 0.5);
-};
+	$scope.selectAmountQuarter = (foodArr) => {
+		console.log("foodArr", foodArr);
+		$scope.carbs = $scope.foodArr[0].fields.nf_total_carbohydrate;
+		console.log("carbsQuarter", Math.floor($scope.carbs * 0.25));
+		$scope.quarter = Math.floor($scope.carbs * 0.25);
+		return $scope.quarter;
+	};
 
-$scope.selectAmountWhole = (foodArr) => {
-	let carbs = $scope.foodArr[0].fields.nf_total_carbohydrate;
-	console.log("carbsWhole", carbs);
-	return carbs;
-};
+	$scope.selectAmountHalf = (foodArr) => {
+		$scope.carbs = $scope.foodArr[0].fields.nf_total_carbohydrate;
+		console.log("carbsHalf", Math.floor($scope.carbs * 0.5));
+		$scope.half = Math.floor($scope.carbs * 0.5);
+		return $scope.half;
+	};
+
+	$scope.selectAmountWhole = (foodArr) => {
+		$scope.carbs = $scope.foodArr[0].fields.nf_total_carbohydrate;
+		console.log("carbsWhole", $scope.carbs);
+		return $scope.carbs;
+	};
 
 // uses insulin info from profile to calculate "meal"
 // will plug into amount(s) for (each) food item
+	$scope.meal = (carbs, selectedMeal) => {
+		console.log("carbs", carbs);
+		let savedProfile = currentProfileArr;
+		let meal = savedProfile[selectedMeal];
 
-$scope.breakfast = () => {
-	let breakfast  = $scope.userProfile.breakfast;
-	console.log("breakfast", Math.floor(breakfast * carbs));
-	return Math.floor(breakfast * carbs);
-};
+		if ($scope.quarter){
+			let mealQuarter = Math.floor($scope.quarter / meal);
+			$window.location.href = `#!/results/view/${mealQuarter}`;
+		}
+		else if ($scope.half) {
+			let mealHalf = Math.floor($scope.half / meal);
+			$window.location.href = `#!/results/view/${mealHalf}`;
+		}
+		else {
+			let mealWhole = Math.floor($scope.carbs / meal);
+			$window.location.href = `#!/results/view/${mealWhole}`;
+		}
 
-// $scope.lunch = () => {
-// 	$scope.userProfile.lunch
-// };
-
-// $scope.snack = () => {
-// 		$scope.userProfile.snack
-
-// };
-
-// $scope.dinner = () => {
-// 	$scope.userProfile.dinner
-
-// };
-
+	};
 
 });

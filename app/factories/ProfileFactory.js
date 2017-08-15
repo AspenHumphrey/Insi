@@ -2,6 +2,10 @@
 
 app.factory("ProfileFactory", function($q, $http, FirebaseUrl, FBCreds) {
 
+let currentProfile = {};
+let getCurrentProfile = () => {
+  return currentProfile;
+};
 
    let getProfile = (profileId) => {
     console.log("userId", profileId);
@@ -14,7 +18,9 @@ app.factory("ProfileFactory", function($q, $http, FirebaseUrl, FBCreds) {
           profileData.data[key].id = key;
           dataKey = key;
           }
-        resolve(profileData.data[dataKey]);
+          currentProfile = profileData.data[dataKey];
+          console.log("currentPPP", currentProfile );
+        resolve(currentProfile);
       })
       .catch( (err) => {
         console.log("oops", err);
@@ -76,7 +82,8 @@ app.factory("ProfileFactory", function($q, $http, FirebaseUrl, FBCreds) {
           getProfile, 
           postNewProfile, 
           updateProfile,
-          deleteProfile
+          deleteProfile,
+          getCurrentProfile
   };
 });
 

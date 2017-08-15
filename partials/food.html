@@ -21,9 +21,9 @@
 <!-- amount!-->
 	<div>
 		<h2>How much did you eat?</h2>
-		<button class="btn btn-default" ng-click="selectAmountQuarter()">1/4</button>
-		<button class="btn btn-default" ng-click="selectAmountHalf()">1/2</button>
-		<button class="btn btn-default" ng-click="selectAmountWhole()">whole</button>
+		<button class="btn btn-default" ng-click="selectAmountQuarter(foodArr)">1/4</button>
+		<button class="btn btn-default" ng-click="selectAmountHalf(foodArr)">1/2</button>
+		<button class="btn btn-default" ng-click="selectAmountWhole(foodArr)">whole</button>
 	</div>
 </span>
 </div>
@@ -31,10 +31,10 @@
 <!-- meal -->
 <div>
 	<h2>Select your meal!</h2>
-	<button class="btn btn-default" ng-click="breakfast()">Breakfast</button>
-	<button class="btn btn-default" ng-click="lunch()">Lunch</button>
-	<button class="btn btn-default" ng-click="snack()">Snack</button>
-	<button class="btn btn-default" ng-click="dinner()">Dinner</button>
+	<button class="btn btn-default" ng-click="meal(carbs, 'breakfast')">Breakfast</button>
+	<button class="btn btn-default" ng-click="meal(carbs, 'lunch')">Lunch</button>
+	<button class="btn btn-default" ng-click="meal(carbs, 'snack')">Snack</button>
+	<button class="btn btn-default" ng-click="meal(carbs, 'dinner')">Dinner</button>
 </div>
 <!-- calculate button -->
 <div>
