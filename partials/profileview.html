@@ -1,35 +1,70 @@
 <div ng-include="'partials/navbar.html'"></div>
 
-<h1>Your INSI Profile</h1> 
+<!-- <h1>Your INSI Profile</h1>  -->
 
 <!-- Stack the columns on mobile by making one full-width and the other half-width -->
-<div class="row">
+<!-- <div class="row">
   <div class="col-md-6"></div>
 	Name: {{userProfile.firstName}} {{userProfile.lastName}}
 	Age: {{userProfile.age}}
   <div class="col-md-6"></div>
 	Weight: {{userProfile.weight}}
 	Height: {{userProfile.height}}
-</div>
+</div> -->
 
 <!-- Columns start at 50% wide on mobile and bump up to 33.3% wide on desktop -->
-<div class="row">
-  <div class="col-md-6"></div>
+<!-- <div class="row">
+  <div class="col-md-4"></div>
 		<h4>How much insulin do you need?</h4>
-  <div class="col-md-6"></div>
+  <div class="col-md-4"></div>
 		Breakfast Insulin: 1: {{userProfile.breakfast}}
 		Lunch Insulin: 1: {{userProfile.lunch}}
-  <div class="col-md-6"></div>
+  <div class="col-md-4"></div>
 		Snack Insulin: 1:  {{userProfile.snack}}
 		Dinner Insulin: 1: {{userProfile.dinner}}
-</div>
+</div> -->
 
 <!-- Columns are always 50% wide, on mobile and desktop -->
-<div class="row">
+<!-- <div class="row">
   <div class="col-md-6"></div>
 			<h4>Emergency Contact Information</h4>
   <div class="col-md-6"></div>
 			Name: {{userProfile.ecName}}
 			Relationship: {{userProfile.ecRelationship}}
 			Phone: {{userProfile.ecPhone}}
+</div> -->
+
+<h1>Your INSI Profile</h1> 
+
+<div class="row">
+  <div class="col-xs-12 col-sm-6 col-md-8">
+  Name: {{userProfile.firstName}} {{userProfile.lastName}}
+	Age: {{userProfile.age}}
+	Weight: {{userProfile.weight}}
+	Height: {{userProfile.height}}
+  </div>
+
+  <h3>Emergency Contact Information</h3>
+  <div class="col-xs-6 col-md-4">
+  	Name: {{userProfile.ecName}}
+		Relationship: {{userProfile.ecRelationship}}
+		Phone: {{userProfile.ecPhone}}
+  </div>
 </div>
+
+<div class="row">
+	<h3>How much Insulin do you need?</h3>
+  <div class="col-xs-6 col-sm-4">
+  	Breakfast Insulin: 1: {{userProfile.breakfast}}
+  </div>
+  <div class="col-xs-6 col-sm-4">
+		Lunch Insulin: 1: {{userProfile.lunch}}
+	</div>
+  <!-- Optional: clear the XS cols if their content doesn't match in height -->
+  <div class="clearfix visible-xs-block"></div>
+  <div class="col-xs-6 col-sm-4">
+		Dinner Insulin: 1: {{userProfile.dinner}}
+		</div>
+</div>
+
+<!-- Snack Insulin: 1:  {{userProfile.snack}} -->
