@@ -1,69 +1,53 @@
-<!-- user profile name
-image
-first and last name
-age
-weight
-height
-breakfast 1:15
-lunch 1:15
-snack 1:18
-dinner 1:18
-emergency contact info name, relationship, phone -->
 <div ng-include="'partials/navbar.html'"></div>
 
-<div class="col-xs-12">
-  <h1>{{formtitle}}</h1>
-  <div class="form-group">
-    <label>First Name</label>
-    <input type="text" class="form-control" placeholder="First Name" ng-model="userProfile.firstName"/>
-  </div>
-  <div class="form-group">
-    <label>Last Name</label>
-    <input type="text" class="form-control" placeholder="Last Name" ng-model="userProfile.lastName"/>
-  </div>
-  <div class="form-group">
-    <label>Age</label>
-    <input type="text" class="form-control" placeholder="5" ng-model="userProfile.age"/>
-  </div>
-  <div class="form-group">
-    <label>Weight</label>
-    <input type="text" class="form-control" placeholder="50lbs" ng-model="userProfile.weight"/>
-  </div>
-  <div class="form-group">
-    <label>Height</label>
-    <input type="text" class="form-control" placeholder="4'6" ng-model="userProfile.height"/>
-  </div>
-  <div class="form-group">
-    <label>Breakfast Insulin : Carbohydrate</label>
-     <div>1:</div><input type="text" class="form-control" placeholder="12" ng-model="userProfile.breakfast"/>
-  </div>
-   <div class="form-group">
-    <label>Lunch Insulin : Carbohydrate</label>
-     <div>1:</div><input type="text" class="form-control" placeholder="15" ng-model="userProfile.lunch"/>
-  </div>
-   <div class="form-group">
-    <label>Snack Insulin : Carbohydrate</label>
-     <div>1:</div><input type="text" class="form-control" placeholder="16" ng-model="userProfile.snack"/>
-  </div>
-   <div class="form-group">
-    <label>Dinner Insulin : Carbohydrate</label>
-    <div>1:</div><input type="text" class="form-control" placeholder="20" ng-model="userProfile.dinner"/>
-  </div>
+<div>
+  <h1>{{formTitle}}</h1>
+  <button class="btn btn-default btn-lg" ng-click="saveProfile()">Save</button>
+</div>
 
-   <div class="form-group">
-    <label>Emergency Contact Name</label>
-    <input type="text" class="form-control" placeholder="Thor" ng-model="userProfile.ecName"/>
-  </div>
-
-   <div class="form-group">
-    <label>Emergency Contact Relationship</label>
-    <input type="text" class="form-control" placeholder="mom" ng-model="userProfile.ecRelationship"/>
-  </div>
-
-   <div class="form-group">
-    <label>Emergency Contact Phone</label>
-    <input type="text" class="form-control" placeholder="xxx-xxx-xxxx" ng-model="userProfile.ecPhone"/>
-  </div>
-  <button class="btn btn-default" ng-click="saveProfile()">Save</button>
-  <div><button class="btn btn-danger" ng-click="deleteProfile(profile.id)"><i class="fa fa-trash" aria-hidden="true"></i></button></div>
+<div class="profileForm">
+    <div class="form-group col-md-4">
+      <label>First Name</label>
+      <input type="text" class="form-control input-lg" placeholder="First Name" ng-model="userProfile.firstName"/>
+    </div>
+    <div class="form-group col-md-4">
+      <label>Last Name</label>
+      <input type="text" class="form-control input-lg" placeholder="Last Name" ng-model="userProfile.lastName"/>
+    </div>
+    <div class="form-group col-md-4">
+      <label>Age</label>
+      <input type="text" class="form-control input-lg" placeholder="5" ng-model="userProfile.age"/>
+    </div>
+    <br><br><br>
+    <div>
+    <h3>Your Insulin : Carbohydrate Conversions</h3></div>
+    <br>
+    <div class="form-group col-md-6">
+      <label>Breakfast 1:</label><input type="text" class="form-control input-lg" placeholder="12" ng-model="userProfile.breakfast"/>
+    </div>
+     <div class="form-group col-md-6">
+      <label>Lunch 1:</label><input type="text" class="form-control input-lg" placeholder="15" ng-model="userProfile.lunch"/>
+    </div>
+     <div class="form-group col-md-6">
+      <label>Snack 1:</label><input type="text" class="form-control input-lg" placeholder="16" ng-model="userProfile.snack"/>
+    </div>
+     <div class="form-group col-md-6">
+      <label>Dinner 1:</label><input type="text" class="form-control input-lg" placeholder="20" ng-model="userProfile.dinner"/>
+    </div>
+    <div>
+    <br><br><br>
+    <h3>Emergency Contact Information</h3></div>
+    <br>
+     <div class="form-group col-md-4">
+      <label>Name</label>
+      <input type="text" class="form-control input-lg" placeholder="Thor" ng-model="userProfile.ecName"/>
+    </div>
+     <div class="form-group col-md-4">
+      <label>Relationship</label>
+      <input type="text" class="form-control input-lg" placeholder="mom" ng-model="userProfile.ecRelationship"/>
+    </div>
+     <div class="form-group col-md-4">
+      <label>Phone</label>
+      <input type="text" class="form-control input-lg" placeholder="xxx-xxx-xxxx" ng-model="userProfile.ecPhone"/>
+    </div>
 </div>

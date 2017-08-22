@@ -2,13 +2,13 @@
 <h1>Welcome to INSI</h1>
   <h3>Login or Register</h3>
   <div>
-    Email: <input type="email" ng-model="account.email">
+    <input class="input-lg" type="email" placeholder="email" ng-model="account.email">
   </div>
   <div>
-    Password: <input type="password" ng-model="account.password">
+    <input class="input-lg" type="password" placeholder="password" ng-model="account.password">
   </div>
-  <div>
-    <button class="btn btn-info" ng-click="login()">Log in</button>
-    <button class="btn btn-default" ng-click="register()">Register</button>
+  <div class="loginBtns">
+    <button class="btn btn-info btn-lg btn-block" ng-click="login()">Log in</button>
+    <button class="btn btn-default btn-lg btn-block" ng-click="register()">Register</button>
   </div>
 </section>
