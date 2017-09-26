@@ -1,31 +1,31 @@
 <div ng-include="'partials/navbar.html'"></div>
-<div class="profileView">
+<div class="profileView formImg">
 	<h1>Your INSI Profile</h1> 
 	<br>
 	<div class="row">
-  	<div class="col-xs-6">Name: {{userProfile.firstName}} {{userProfile.lastName}}</div>
-  	<div class="col-xs-6">Age: {{userProfile.age}}</div>
+  	<div class="col-xs-6 wText">Name: {{userProfile.firstName}} {{userProfile.lastName}}</div>
+  	<div class="col-xs-6 wText">Age: {{userProfile.age}}</div>
   </div>
 	<br>
 
 	<h2>How much Insulin do you need?</h2>
 	<br>
 	  <div class="row">
-	  	<div class="col-xs-6">Breakfast Insulin: 1: {{userProfile.breakfast}}</div>
-	  	<div class="col-xs-6">Lunch Insulin: 1: {{userProfile.lunch}}</div>
+	  	<div class="col-xs-6 wText">Breakfast Insulin: 1: {{userProfile.breakfast}}</div>
+	  	<div class="col-xs-6 wText">Lunch Insulin: 1: {{userProfile.lunch}}</div>
 	  </div>
 	 <br>
 	  <div class="row">
-	  	<div class="col-xs-6">Snack Insulin: 1: {{userProfile.snack}}</div>
-	  	<div class="col-xs-6">Dinner Insulin: 1: {{userProfile.dinner}}</div>
+	  	<div class="col-xs-6 wText">Snack Insulin: 1: {{userProfile.snack}}</div>
+	  	<div class="col-xs-6 wText">Dinner Insulin: 1: {{userProfile.dinner}}</div>
 	  </div>
 	<br>
 
 	<h2>Emergency Contact Information</h2>
 	<br>
 		<div class="row">
-			<div class="col-xs-3 col-md-4">Name: {{userProfile.ecName}}</div>
-			<div class="col-xs-3 col-md-4">Relationship: {{userProfile.ecRelationship}}</div>
-			<div class="col-xs-3 col-md-4">Phone: {{userProfile.ecPhone}}</div>
+			<div class="col-xs-3 col-md-4 wText">Name: {{userProfile.ecName}}</div>
+			<div class="col-xs-3 col-md-4 wText">Relationship: {{userProfile.ecRelationship}}</div>
+			<div class="col-xs-3 col-md-4 wText">Phone: {{userProfile.ecPhone}}</div>
 		</div>
 </div>
