@@ -2,10 +2,10 @@
 
 ## Technologies used for this application:
 
-Styling: Bootstrap
-Application:  AngularJS
-Data Storage: Firebase
-Food Search: NutritionIX API https://www.nutritionix.com/
+* Styling: Bootstrap
+* Application:  AngularJS
+* Data Storage: Firebase
+* Food Search: NutritionIX API https://www.nutritionix.com/
 
 ## What is INSI?
 INSI is an Insulin to Carbohydrate Converter. 
