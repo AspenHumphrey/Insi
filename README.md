@@ -1,5 +1,8 @@
 # INSI: Modern Insulin Maintainance 
 
+## INSI link:
+https://insi-73c0b.firebaseapp.com/#!/
+
 ## Technologies used for this application:
 
 * Styling: Bootstrap
