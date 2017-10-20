@@ -1,7 +1,7 @@
 # INSI: Modern Insulin Maintainance 
 
 ## INSI link:
-https://insi-73c0b.firebaseapp.com/#!/
+Use INSI!! https://insi-73c0b.firebaseapp.com/#!/
 
 The styling is currently under construction- the deployment with Firebase compressed the Bootstrap nav bar. It is a grey button next to the blue "INSI" logo in the top left corner on every page after initial Registration/Log-in.
 
