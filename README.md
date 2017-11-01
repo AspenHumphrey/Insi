@@ -8,9 +8,17 @@ The styling is currently under construction- the deployment with Firebase compre
 ## Technologies used for this application:
 
 * Styling: Bootstrap
+1. USE this CDN: <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+
 * Application:  AngularJS
+1. RUN: npm install angular
+2. ADD this script tag to your index.html: <script src="/node_modules/angular/angular.js"></script>
+
 * Data Storage: Firebase
-* Food Search: NutritionIX API https://www.nutritionix.com/
+1. GO TO Firebase: https://firebase.google.com/
+
+* Food Search API: 
+1. GO TO: NutritionIX API https://www.nutritionix.com/
 
 ## What is INSI?
 INSI is an Insulin to Carbohydrate Converter. 
