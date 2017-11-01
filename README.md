@@ -12,7 +12,6 @@
 ### Application:  AngularJS
 1. RUN: npm install angular
 2. ADD: this script tag to your index.html:<script type="text/javascript" src="/node_modules/angular/angular.min.js"></script>
-3. ADD: this script tag to your index.html:<script type="text/javascript" src="/node_modules/angular-route/angular-route.min.js"></script>
 
 ### Angular Route
 1. Run npm install --save angular-route
