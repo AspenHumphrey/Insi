@@ -15,7 +15,7 @@
 3. ADD: this script tag to your index.html:<script type="text/javascript" src="/node_modules/angular-route/angular-route.min.js"></script>
 
 ### Angular Route
-1. Run npm install --save angular-route@X.Y.Z
+1. Run npm install --save angular-route
 2. Add this script to your index.html: "//ajax.googleapis.com/ajax/libs/angularjs/X.Y.Z/angular-route.js"
 
 ### Data Storage: Firebase
