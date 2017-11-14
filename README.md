@@ -46,7 +46,6 @@ A user will not be able to use the functionality of INSI unless they have Logged
 ## On Register
 The User will enter in an email address and a password.
 
-![alt text](https://github.com/AspenHumphrey/insi/raw/master/src/common/images/register.png "Register Page")
 
 ### When a New User clicks Register:
     1. The User is taken to a "Create Your Profile Page".
