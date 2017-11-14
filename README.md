@@ -45,6 +45,7 @@ A user will not be able to use the functionality of INSI unless they have Logged
 
 ## On Register
 The User will enter in an email address and a password.
+
 ### When a New User clicks Register:
     1. The User is taken to a "Create Your Profile Page".
     2. There the user is promted to enter their: Personal Information: First Name, Last Name, Age. Insulin Conversions for: Breakfast, Snack, Lunch, Dinner. Emergency Contact Information: Name, Relationship, Phone Number.
