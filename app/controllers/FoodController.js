@@ -1,50 +1,34 @@
 'use strict';
 
-// all things food/API search-amount/Profile Meals
-
-// food search- (via API from FoodFactory) - gets: 
-// food search (carbs)
-
-// select meal from user profile
-// breakfast lunch snack dinner
-
-// select multiple foods to calculate 
-// what if the person eats more than one "whole" 
-// need to make a function that will calculate multi..
-
-// calculator!
 app.controller('FoodController', function($scope, $q, $window, $routeParams, FoodFactory, ProfileFactory, UserFactory){
 
 	$scope.search = "";
 	$scope.item = 0;
 
+	// gets the current profile
 	let currentProfileArr = [];
-  console.log("Fetch called");
   ProfileFactory.getProfile(UserFactory.getCurrentUser())
   .then( (profileData) => {
-  	console.log("profile Data", profileData);
     currentProfileArr = profileData;
   });
 
+	// setting the searched word entered to scope and calling the getFoodArr() to match the word 
 	$scope.searchFood = () => {
 		FoodFactory.getFoodData($scope.search)
 		.then( (data) => {
 			getFoodArr();
-		// console.log("data", data);
 		});
 	};
 
+	// calling the food data from the api
 	function getFoodArr() {
 		FoodFactory.getFoodData($scope.search)
 		.then( (foods) => {
-			console.log("foods", foods.data);
 			$scope.foodArr = [];
 			$scope.food = foods.data.hits;
-			console.log("scope.food", $scope.food);
 			angular.forEach($scope.food, function(data){
 				$scope.foodArr.push(data);
 			});
-			console.log("$scope.foodArr", $scope.foodArr);
 		})
 		.catch( (err) => {
 			console.log("err", err);
@@ -59,30 +43,25 @@ app.controller('FoodController', function($scope, $q, $window, $routeParams, Foo
 	$scope.half= null;
 
 	$scope.selectAmountQuarter = (foodArr) => {
-		console.log("foodArr", foodArr);
 		$scope.carbs = $scope.foodArr[0].fields.nf_total_carbohydrate;
-		console.log("carbsQuarter", Math.floor($scope.carbs * 0.25));
 		$scope.quarter = Math.floor($scope.carbs * 0.25);
 		return $scope.quarter;
 	};
 
 	$scope.selectAmountHalf = (foodArr) => {
 		$scope.carbs = $scope.foodArr[0].fields.nf_total_carbohydrate;
-		console.log("carbsHalf", Math.floor($scope.carbs * 0.5));
 		$scope.half = Math.floor($scope.carbs * 0.5);
 		return $scope.half;
 	};
 
 	$scope.selectAmountWhole = (foodArr) => {
 		$scope.carbs = $scope.foodArr[0].fields.nf_total_carbohydrate;
-		console.log("carbsWhole", $scope.carbs);
 		return $scope.carbs;
 	};
 
 // uses insulin info from profile to calculate "meal"
 // will plug into amount(s) for (each) food item
 	$scope.meal = (carbs, selectedMeal) => {
-		console.log("carbs", carbs);
 		let savedProfile = currentProfileArr;
 		let meal = savedProfile[selectedMeal];
 
@@ -102,3 +81,17 @@ app.controller('FoodController', function($scope, $q, $window, $routeParams, Foo
 	};
 
 });
+
+// all things food/API search-amount/Profile Meals
+
+// food search- (via API from FoodFactory) - gets: 
+// food search (carbs)
+
+// select meal from user profile
+// breakfast lunch snack dinner
+
+// select multiple foods to calculate 
+// what if the person eats more than one "whole" 
+// need to make a function that will calculate multi..
+
+// calculator!

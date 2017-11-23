@@ -4,41 +4,41 @@
   <h1>INSI Calculator</h1>
 
 <!--food search -->
-      <div class="input-group">
-        <span class="input-group-btn"></span>
-        <h2>Search your food</h2>
-        <input type="text" class="form-control input-lg" placeholder="Search for..." ng-model="search"/><button class="btn btn-default btn-lg" ng-click="searchFood()"><i class="fa fa-search" aria-hidden="true"></i><br></button>
-      </div>
+	<div class="input-group">
+		<span class="input-group-btn"></span>
+		<h2>Search your food</h2>
+		<input type="text" class="form-control input-lg" placeholder="Search for..." ng-model="search"/><button class="btn btn-default btn-lg" ng-click="searchFood()"><i class="fa fa-search" aria-hidden="true"></i><br></button>
+	</div>
 
-<div ng-repeat="food in foodArr">
-<span ng-show="$index === item">
-<!-- food information -->
-	<div>
-		<h3>{{food.fields.item_name}}</h3>
-		<h4>Serving Per Unit: {{food.fields.nf_serving_size_unit}}</h4>
-		<h4>Total Number of Carbohydrates: {{food.fields.nf_total_carbohydrate}}</h4>
+	<div ng-repeat="food in foodArr">
+	<span ng-show="$index === item">
+	<!-- food information -->
+		<div>
+			<h3>{{food.fields.item_name}}</h3>
+			<h4>Serving Per Unit: {{food.fields.nf_serving_size_unit}}</h4>
+			<h4>Total Number of Carbohydrates: {{food.fields.nf_total_carbohydrate}}</h4>
+		</div>
+	<!-- amount!-->
+		<div>
+			<h2>How much did you eat?</h2>
+			<button class="btn btn-default btn-lg" ng-click="selectAmountQuarter(foodArr)">1/4</button>
+			<button class="btn btn-default btn-lg" ng-click="selectAmountHalf(foodArr)">1/2</button>
+			<button class="btn btn-default btn-lg" ng-click="selectAmountWhole(foodArr)">whole</button>
+		</div>
+	</span>
 	</div>
-<!-- amount!-->
-	<div>
-		<h2>How much did you eat?</h2>
-		<button class="btn btn-default btn-lg" ng-click="selectAmountQuarter(foodArr)">1/4</button>
-		<button class="btn btn-default btn-lg" ng-click="selectAmountHalf(foodArr)">1/2</button>
-		<button class="btn btn-default btn-lg" ng-click="selectAmountWhole(foodArr)">whole</button>
-	</div>
-</span>
-</div>
 
 <!-- meal -->
-<div>
-	<h2>Select your meal!</h2>
-	<button class="btn btn-default btn-lg" ng-click="meal(carbs, 'breakfast')">Breakfast</button>
-	<button class="btn btn-default btn-lg" ng-click="meal(carbs, 'lunch')">Lunch</button>
-	<button class="btn btn-default btn-lg" ng-click="meal(carbs, 'snack')">Snack</button>
-	<button class="btn btn-default btn-lg" ng-click="meal(carbs, 'dinner')">Dinner</button>
-</div>
-<!-- calculate button -->
-<div>
-	<!-- <button class="btn btn-default" ng-click="calculate()">Caculate!!</button> -->
-</div>
+	<div>
+		<h2>Select your meal!</h2>
+		<button class="btn btn-default btn-lg" ng-click="meal(carbs, 'breakfast')">Breakfast</button>
+		<button class="btn btn-default btn-lg" ng-click="meal(carbs, 'lunch')">Lunch</button>
+		<button class="btn btn-default btn-lg" ng-click="meal(carbs, 'snack')">Snack</button>
+		<button class="btn btn-default btn-lg" ng-click="meal(carbs, 'dinner')">Dinner</button>
+	</div>
+	<!-- calculate button -->
+	<div>
+		<!-- <button class="btn btn-default" ng-click="calculate()">Caculate!!</button> -->
+	</div>
 
 </div>
