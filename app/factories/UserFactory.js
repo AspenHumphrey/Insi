@@ -1,16 +1,15 @@
 'use strict';
 app.factory("UserFactory", function($q, $http, FirebaseUrl, FBCreds){
-var config = {
-    apiKey: FBCreds.key,
-    authDomain: FBCreds.authDomain
-  };
+  var config = {
+      apiKey: FBCreds.key,
+      authDomain: FBCreds.authDomain
+    };
 
   firebase.initializeApp(config);
 
   let currentUser = null;
 
   let isAuthenticated = function() {
-    console.log("isAuthenticated called");
     return new Promise( (resolve, reject) => {
       firebase.auth().onAuthStateChanged(function(user) {
         if (user) {
@@ -56,13 +55,13 @@ var config = {
     });
   };
 
-return {
-	isAuthenticated,
-	getCurrentUser,
-	loginUser,
-	logoutUser,
-	createUser
-};
+  return {
+    isAuthenticated,
+    getCurrentUser,
+    loginUser,
+    logoutUser,
+    createUser
+  };
 
 
 });

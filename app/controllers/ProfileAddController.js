@@ -19,10 +19,8 @@ app.controller("ProfileAddController", function($scope, $window, ProfileFactory,
   };
 
   $scope.saveProfile = () => {
-      console.log("userProfile", $scope.userProfile);
     ProfileFactory.postNewProfile($scope.userProfile)
     .then( (data) => {
-      console.log("new register data", data);
       $window.location.href = '#!/food/view';
     });
   };

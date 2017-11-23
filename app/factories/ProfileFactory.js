@@ -2,28 +2,25 @@
 
 app.factory("ProfileFactory", function($q, $http, FirebaseUrl, FBCreds) {
 
-let currentProfile = {};
-let getCurrentProfile = () => {
-  return currentProfile;
-};
+  let currentProfile = {};
+  let getCurrentProfile = () => {
+    return currentProfile;
+  };
 
    let getProfile = (profileId) => {
     console.log("userId", profileId);
     return $q( (resolve, reject) => {
       $http.get(`${FirebaseUrl}/profiles.json?orderBy="uid"&equalTo="${profileId}"`)
       .then( (profileData) => {
-        // console.log("profileData", profileData);
         let dataKey;
         for (let key in profileData.data) {
           profileData.data[key].id = key;
           dataKey = key;
           }
           currentProfile = profileData.data[dataKey];
-          console.log("currentPPP", currentProfile );
         resolve(currentProfile);
       })
       .catch( (err) => {
-        console.log("oops", err);
         reject(err);
       });
     });
@@ -56,8 +53,6 @@ let getCurrentProfile = () => {
         .catch( (err) => {
           reject(err);
         });
-      } else {
-        console.log("Go home");
       }
     });
   };
@@ -72,8 +67,6 @@ let getCurrentProfile = () => {
         .catch( (err) => {
           reject(err);
         });
-      } else {
-        console.log("No id passed in");
       }
     });
   };
