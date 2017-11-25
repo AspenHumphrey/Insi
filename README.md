@@ -75,5 +75,5 @@ The user is taken directly back to the INSI Log-In Page.
     * Calculate their food
     * A timer will go off two hours later to promt the user again to log thier blood sugar.
 4. The user will be able to calculate multiple foods at one time for each meal.
-
 5. All INSI information will go into a graph that will be able to compile into a PDF to be sent via email to healthcare providors.
+6. Convert Firebase to NodeJS, ExpressJS, and PostgreSQL 
